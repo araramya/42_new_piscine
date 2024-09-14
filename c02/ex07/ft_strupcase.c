@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaramyan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 17:29:17 by aaramyan          #+#    #+#             */
-/*   Updated: 2024/09/14 17:34:24 by aaramyan         ###   ########.fr       */
+/*   Created: 2024/09/14 19:53:21 by aaramyan          #+#    #+#             */
+/*   Updated: 2024/09/14 20:26:59 by aaramyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char *ft_strupcase(char *str)
 {
-	unsigned int	i;
+	int i;
 
 	i = 0;
-	while (src[i] && i < n)
+	while(str[i])
 	{
-		dest[i] = src[i];
+		if(str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return str;
 }
-
-//Test
-//#include <stdio.h>
-//int main()
-//{
-//	char str1[] = "Hello";
-//	char str2[] = "Arsenikum";
-//	ft_strncpy(str2, str1, 3);
-//	printf("%s\n", str2);
-//}

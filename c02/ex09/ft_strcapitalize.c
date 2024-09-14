@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaramyan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 17:29:17 by aaramyan          #+#    #+#             */
-/*   Updated: 2024/09/14 17:34:24 by aaramyan         ###   ########.fr       */
+/*   Created: 2024/09/14 21:32:50 by aaramyan          #+#    #+#             */
+/*   Updated: 2024/09/14 21:58:17 by aaramyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strcapitalize(char *str);
 {
-	unsigned int	i;
+	int i;
 
 	i = 0;
-	while (src[i] && i < n)
+	while(str[i])
 	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
-}
 
-//Test
-//#include <stdio.h>
-//int main()
-//{
-//	char str1[] = "Hello";
-//	char str2[] = "Arsenikum";
-//	ft_strncpy(str2, str1, 3);
-//	printf("%s\n", str2);
-//}
+	}
+
+}

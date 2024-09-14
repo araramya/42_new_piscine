@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaramyan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 17:29:17 by aaramyan          #+#    #+#             */
-/*   Updated: 2024/09/14 17:34:24 by aaramyan         ###   ########.fr       */
+/*   Created: 2024/09/14 18:53:54 by aaramyan          #+#    #+#             */
+/*   Updated: 2024/09/14 19:49:52 by aaramyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_str_is_numeric(char *str)
 {
-	unsigned int	i;
+	int i;
 
 	i = 0;
-	while (src[i] && i < n)
+	if(!str)
+		return (1);
+	while(str[i])
 	{
-		dest[i] = src[i];
-		i++;
+		if (str[i] >= '0' && str[i] <= '9')
+			i++;
+		else
+			return (0);
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (1);
 }
-
-//Test
-//#include <stdio.h>
-//int main()
-//{
-//	char str1[] = "Hello";
-//	char str2[] = "Arsenikum";
-//	ft_strncpy(str2, str1, 3);
-//	printf("%s\n", str2);
-//}
