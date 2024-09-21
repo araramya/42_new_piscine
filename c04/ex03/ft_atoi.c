@@ -27,43 +27,38 @@ int	ft_is_numeric(char c)
 
 int ft_atoi(char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
+  int sign;
+  int result;
+  int i;
 
-	i = 0;
-	sign = 0;
-	result = 0;
-	while(str[i])
-	{
-		if (ft_is_space(str[i]))
-			i++;
-		if(str[i] == '-' || str[i] == '+')
-		{
-			if(str[i] == '-')
-				sign++;
-			i++;
-		}
-		while(str[i] >= '0' && str[i] <= '9')
-		{
-			
-			result *= 10;
-			result += (str[i] - '0');
-			i++;
-		}
-		i++;
-
-	}
-		if (sign % 2 != 0 )
-			result *= -1;
-
-	return result;
-
+  sign = 1;
+  result = 0;
+  i = 0;
+  while (ft_is_space(str[i]))
+    i++;
+  while(str[i] == '-' || str[i] == '+')
+  {
+    if(str[i] == '-')
+      sign *= -1;
+    i++;
+  }
+  while(str[i])
+  {
+    if(str[i] >= '0' && str[i] <= '9')
+    {
+      result *= 10;
+      result += str[i] - '0';
+    }
+    else
+      return (result * sign);
+    i++;
+  }
+  return (result * sign);
 }
 
 #include <stdio.h>
 int main ()
 {
-	char number[] = "------1234asdasdas123123";
+	char number[] = "-------1234asdasdas123123";
 	printf("%d\n", ft_atoi(number));
 }
